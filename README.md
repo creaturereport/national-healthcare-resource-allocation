@@ -37,3 +37,39 @@ Final delivery, asset deployment, and repository verification are scheduled for 
 
 **The Analytical Imperative:**  
 In healthcare logistics, data is directly tied to human outcomes. This analysis transcends simple numbers on a screen; by uncovering a clear, year-over-year baseline in high-volume sectors like Los Angeles County, it provides decision-makers with the proactive runway required to shift medical funding, optimize hospital bed capacities, and ensure that maternal care resources are precisely deployed *before* local medical infrastructure faces critical bottlenecks. True data maturity turns historical logs into protective, life-saving strategies.
+
+----------------------------------------------------------------
+*   **The Insight:** Verified core columns including `Year`, `County_of_Residence`, and `Births`, ensuring the data types were correct and ready for aggregation.
+
+#### **Scenario 2: Low-Volume Regional Identification (Default Ascending)**
+*   **Objective:** Observe the default sorting behavior of the workspace to identify the areas with the absolute lowest volume of live births.
+*   **The SQL Logic:**
+```sql
+SELECT
+*
+FROM
+`bigquery-public-data.sdoh_cdc_wonder_natality.county_natality`
+ORDER BY
+Births -- defaulting to ascending order (smallest to largest)
+LIMIT
+10
+```
+-----------------------------------------------
+*   **The Critical Finding:** Uncovered that Los Angeles County, CA holds the highest volume in the dataset (surpassing 123,000 births in 2016). More importantly, identified a visible year-over-year *decline* in births within that exact hotspot from 2016 down to 2018, proving a shifting trend that requires proactive medical funding adjustments.
+
+#### **Scenario 3: High-Priority Hotspot Isolation (Descending Target)**
+*   **Objective:** Rearrange the dataset to instantly surface the highest-volume birth regions in the United States to address the client's primary staffing and resource allocation bottleneck.
+*   **The SQL Logic:**
+  ```sql
+SELECT 
+* 
+FROM 
+`bigquery-public-data.sdoh_cdc_wonder_natality.county_natality`
+ORDER BY 
+Births DESC -- forcing the largest delivery counts to the top
+LIMIT 
+10 -- isolating the top 10 highest-volume targets
+```
+---
+
+
