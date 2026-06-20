@@ -41,6 +41,21 @@ In healthcare logistics, data is directly tied to human outcomes. This analysis 
 ----------------------------------------------------------------
 *   **The Insight:** Verified core columns including `Year`, `County_of_Residence`, and `Births`, ensuring the data types were correct and ready for aggregation.
 
+#### **Scenario 1: Baseline Structural Audit (Unsorted Exploration)**
+*   **Objective:** Ingest the raw CDC births data to understand the underlying table schema and row layout without manipulating the record distribution.
+*   **The SQL Logic:**
+```sql
+SELECT 
+* -- select all columns to audit the schema
+FROM 
+`bigquery-public-data.sdoh_cdc_wonder_natality.county_natality` -- targeting the core natality table
+LIMIT 
+1000 -- limiting rows for initial structural inspection
+```
+
+----------------------------------------------------------------
+*   **The Insight:** Verified core columns including `Year`, `County_of_Residence`, and `Births`, ensuring the data types were correct and ready for aggregation.
+
 #### **Scenario 2: Low-Volume Regional Identification (Default Ascending)**
 *   **Objective:** Observe the default sorting behavior of the workspace to identify the areas with the absolute lowest volume of live births.
 *   **The SQL Logic:**
