@@ -1,6 +1,6 @@
 # National Healthcare Resource Allocation
 **Data Analyst:** Symone Thompson  
-**Client/Sponsor:** National Maternal Health Organization  
+**Project Type:** Self-directed scenario project — I created this maternal-health resource scenario myself to practice SQL and BigQuery analysis on public CDC data. No client or employer was involved.  
 
 ---
 
@@ -19,7 +19,7 @@ The purpose of this project is to address critical resource and staffing shortag
 ## 📦 Deliverables
 * **SQL Data Sorting Script:** A clean, production-ready, and well-commented `.sql` script demonstrating data ingestion, schema validation, and descending sorting parameters using BigQuery standard SQL syntax.
 * **Analytical Dashboard:** A highly visual dashboard focusing on regional birth concentrations across the major US geographic sectors (Northeast, South, Midwest, and West) to easily identify regional spikes and distribution anomalies.
-* **Executive Summary Report:** A brief presentation deck translating the top 10 high-priority county findings into clear resource allocation recommendations for healthcare stakeholders.
+* **Executive Summary Report:** A brief presentation deck translating the top 10 high-priority county findings into clear resource allocation recommendations.
 
 ---
 
@@ -73,7 +73,7 @@ LIMIT
 *   **The Critical Finding:** Uncovered that Los Angeles County, CA holds the highest volume in the dataset (surpassing 123,000 births in 2016). More importantly, identified a visible year-over-year *decline* in births within that exact hotspot from 2016 down to 2018, proving a shifting trend that requires proactive medical funding adjustments.
 
 #### **Scenario 3: High-Priority Hotspot Isolation (Descending Target)**
-*   **Objective:** Rearrange the dataset to instantly surface the highest-volume birth regions in the United States to address the client's primary staffing and resource allocation bottleneck.
+*   **Objective:** Rearrange the dataset to instantly surface the highest-volume birth regions in the United States to address the scenario's central staffing and resource allocation bottleneck.
 *   **The SQL Logic:**
   ```sql
 SELECT 
